@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update tariff</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+    <script type="text/javascript" th:src="@{/js/lib/tariff-controller.js}"></script>
+    <script type="text/javascript" th:src="@{/js/lib/load-edit-tariff-data.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container">
+
+    <h1 class="my-3">Update tariff</h1>
+
+    <div class="card">
+        <div class="card-body">
+
+            <form class="was-validated">
+
+                <input id="tariffUuid" value="" type="hidden">
+                <input id="createdAt" value="" type="hidden">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control is-invalid" id="inputName"
+                           name="name" placeholder="Enter name" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <input type="text" class="form-control is-invalid" id="inputDescription"
+                           name="description" placeholder="Enter description" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPrice" class="form-label">Price</label>
+                    <input type="number" min="0" step=".01" class="form-control is-invalid" id="inputPrice"
+                           name="price" placeholder="Enter price" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputTariffMessages" class="form-label">Number of messages in tariff</label>
+                    <input type="number" min="0" step="1" class="form-control is-invalid" id="inputTariffMessages"
+                           name="tariffMessages" placeholder="Enter number of messages in tariff" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputOverAt" class="form-label">Over date of tariff</label>
+                    <input type="date" class="form-control" id="inputOverAt"
+                           name="inputOverAt" placeholder="Enter over date of tariff" value="">
+                </div>
+                <div class="mb-3">
+                    <label for="inputForceOverAt" class="form-label">Over force date of tariff</label>
+                    <input type="date" class="form-control" id="inputForceOverAt"
+                           name="inputForceOverAt" placeholder="Enter force over date of tariff" value="">
+                </div>
+
+                <button type="button" class="mb-3 btn btn-primary" onclick="editTariff()">Save</button>
+
+                <div id="success-block" class="success-block display-none">
+                    <span>Tariff update successful!</span>
+                </div>
+                <div id="error-block" class="error-block display-none">
+                    <span>Something went wrong! Please try again.</span>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+</html>

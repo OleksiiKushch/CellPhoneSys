@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register new subscriber</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+    <script type="text/javascript" th:src="@{/js/lib/load-subscribe-data.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container">
+
+    <h1 class="my-3">Register new subscriber</h1>
+
+    <div class="card">
+        <div class="card-body">
+
+            <form class="was-validated">
+
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control is-invalid" id="inputName"
+                           name="name" placeholder="Enter name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputSurname" class="form-label">Surname</label>
+                    <input type="text" class="form-control is-invalid" id="inputSurname"
+                           name="surname" placeholder="Enter surname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPhoneNumber" class="form-label">Phone number</label>
+                    <input type="tel" class="form-control is-invalid" id="inputPhoneNumber"
+                           name="phoneNumber" placeholder="Enter phone number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control is-invalid" id="inputPassword"
+                           name="password" placeholder="Enter password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputConfirmationPassword" class="form-label">Confirmation password</label>
+                    <input type="password" class="form-control is-invalid" id="inputConfirmationPassword"
+                           name="confirmationPassword" placeholder="Re-enter password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputBalance" class="form-label">Balance</label>
+                    <input type="number" min="0" step=".01" class="form-control is-invalid" id="inputBalance"
+                           name="balance" placeholder="Enter balance" required>
+                </div>
+                <div class="mb-3">
+                    <label for="selectTariff" class="form-label">Tariff</label>
+                    <select class="form-select" name="tariffUuid" id="selectTariff" required>
+                        <option disabled selected value> -- select a tariff -- </option>
+                    </select>
+                </div>
+
+                <button type="button" class="mb-3 btn btn-primary" onclick="registerNewSubscriber()">Subscribe</button>
+
+                <div id="success-block" class="success-block display-none">
+                    <span>Registration of a new subscriber was successful!</span>
+                </div>
+                <div id="error-block" class="error-block display-none">
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="haveAccount" class="form-label">Already have an account? login </label>
+                    <a th:href="@{login}" class="fw-bold text-body" id="haveAccount"><u>here</u></a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+
+<script>
+loadSelectiveListOfAllTariffs();
+</script>
+
+</html>

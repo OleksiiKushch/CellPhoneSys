@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="text/javascript" th:src="@{/js/lib/show-hide-password.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container">
+    <h1 class="my-3">Login page</h1>
+    <div class="card bg-light">
+        <div class="card-body">
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="inputPhoneNumber" class="form-label">Phone number</label>
+                    <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="Enter phone number"
+                           name="phoneNumber" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <div class="input-group" id="showHidePassword">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"
+                               name="password" required>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" style="border-radius: 0 0.5em 0.5em 0 !important;">
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary mt-3 mb-1" onclick="login()">Sing in</button>
+
+                <div id="error-block" class="error-block display-none">
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="forgotPassword" class="form-label">Forgot your password? reset it </label>
+                    <a href="#" class="fw-bold text-body" id="forgotPassword"><u>here</u></a>
+                </div>
+
+                <div class="mb-1">
+                    <label for="noAccount" class="form-label">No account? registration </label>
+                    <a th:href="@{register-new-subscriber}" class="fw-bold text-body" id="noAccount"><u>here</u></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+</html>

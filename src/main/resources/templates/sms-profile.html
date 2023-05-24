@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SMS profile</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container">
+  <h1 class="my-3">SMS profile:</h1>
+  <hr>
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3">
+        <h3 class="ml-4 mb-3">All chats:</h3>
+        <div class="ml-4 border" style="width: 16em; height: 35em; overflow-y: scroll;">
+          <div id="container-for-chats" class="d-flex flex-column align-items-center text-center p-3 py-5">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 mb-5 border">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-right">Send SMS:</h3>
+          </div>
+          <hr style="border-top: 8px solid #8c8b8b;">
+          <form class="was-validated">
+            <div class="row mt-2">
+              <div class=" form-groupcol-md-12">
+                <label for="inputPhoneNumber" class="form-label">Send to</label>
+                <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="Enter phone number"
+                       name="phoneNumber" required>
+              </div>
+              <label for="chatHistory" class="form-label mt-4">Chat history</label>
+              <div class="messages-table-data border col-md-10" id="chatHistory" style="width: 160em; height: 20em; overflow-y: scroll;">
+                <table class="table table-fixed border rounded mt-3">
+                  <tbody id="container-for-messages">
+                  </tbody>
+                </table>
+              </div>
+              <div class="form-group col-md-12 mt-4">
+                <label for="inputMessage" class="form-label">Message</label>
+                <textarea class="form-control" minlength="1" id="inputMessage" rows="3" placeholder="Write a message..." required></textarea>
+              </div>
+              <div class="mt-4">
+                <button class="btn btn-primary" type="button" onclick="sendMessage()">Send</button>
+              </div>
+            </div>
+          </form>
+          <hr>
+          <div id="error-block" class="error-block display-none">
+          </div>
+          <hr style="border-top: 8px solid #8c8b8b;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+
+<script>
+loadAllChats();
+</script>
+
+</html>

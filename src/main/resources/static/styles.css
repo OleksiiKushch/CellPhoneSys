@@ -1,0 +1,13 @@
+.display-none {
+  display: none;
+}
+
+.success-block {
+  color: green;
+  font-weight: bold;
+}
+
+.error-block {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tariff catalog</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+    <script type="text/javascript" th:src="@{/js/lib/load-tariff-catalog.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container-fluid">
+    <h1 class="mt-4">Tariff catalog</h1>
+
+    <table class="table table-striped border rounded mb-5">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">created at</th>
+                <th scope="col">over at</th>
+                <th scope="col">force over at</th>
+                <th scope="col">name</th>
+                <th scope="col">description</th>
+                <th scope="col">price</th>
+                <th scope="col">tariff messages</th>
+                <th scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody id="container-for-tariff-data">
+
+        </tbody>
+    </table>
+
+</div>
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+</html>
