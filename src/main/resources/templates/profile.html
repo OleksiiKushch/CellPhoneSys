@@ -47,8 +47,8 @@
                     </div>
                     <div class="row mt-2">
                         <ul style="list-style-type:none;">
-                            <li>Tariff issued at: <b th:text="${session.loggedUser?.tariffIssuedAt}"></b></li>
-                            <li>Tariff expires at: <b th:text="${session.loggedUser?.tariffExpiresAt}"></b></li>
+                            <li>Tariff issued at: <b id="tariffIssuedAt" th:text="${session.loggedUser?.tariffIssuedAt}"></b></li>
+                            <li>Tariff expires at: <b id="tariffExpiresAt" th:text="${session.loggedUser?.tariffExpiresAt}"></b></li>
                         </ul>
                     </div>
                     <hr>
@@ -195,6 +195,7 @@
 loadExpensesHistory();
 loadSelectiveListOfAllTariffsForChangeTariff();
 loadDataForCurrentTariff();
+fixDatesFormat();
 </script>
 
 </html>

@@ -14,53 +14,59 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
     <script type="text/javascript" th:src="@{/js/lib/subscriber-controller.js}"></script>
 
 </head>
 <body>
-    <header class="card-header text-dark bg-light" th:fragment="header">
-        <nav class="navbar">
 
-            <a class="navbar-brand" th:href="@{home}">CellPhoneSys</a>
+<div th:fragment="header">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg-light">
+        <h3><a class="navbar-brand" th:href="@{home}" style="margin-left: 0.9em;">CellPhoneSys</a></h3>
 
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{create-new-tariff}">Create new tariff</a></li>
-            </ul>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li>
+                <a class="nav-link px-2 link-dark" th:href="@{home}">Home</a>
+            </li>
+        </ul>
 
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{tariff-catalog}">Tariff catalog</a></li>
-            </ul>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li>
+                <a class="nav-link px-2 link-secondary" th:href="@{tariff-catalog}">Tariff Catalog</a>
+            </li>
+            <li>
+                <a class="nav-link px-2 link-secondary" th:href="@{create-new-tariff}">Create New Tariff</a>
+            </li>
+        </ul>
 
-            <ul th:if="${session.loggedUser != null}" class="nav navbar-nav">
-                <li><a th:href="@{sms-profile}">SMS profile</a></li>
-            </ul>
-            <ul th:if="${session.loggedUser != null}" class="nav navbar-nav">
-                <li><a th:href="@{profile}">Profile</a></li>
-            </ul>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li th:if="${session.loggedUser != null}">
+                <a class="nav-link px-2 link-dark" th:href="@{sms-profile}">SMS Profile</a>
+            </li>
+            <li th:if="${session.loggedUser != null}">
+                <a class="nav-link px-2 link-dark" th:href="@{profile}">Profile</a>
+            </li>
+        </ul>
 
-            <ul th:if="${session.loggedUser != null}" class="nav navbar-nav">
-                <li><button class="btn btn-link" type="button" onclick="logout()">Log out</button></li>
-            </ul>
-            <ul th:if="${session.loggedUser == null}" class="nav navbar-nav">
-                <li><a th:href="@{login}">Log in</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{register-new-subscriber}">Registration</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-    <footer class="text-dark bg-light mt-auto fixed-bottom" th:fragment="footer">
-        <div class="container my-1 text-center">
-            <span class="text-muted mb-1">© 2023-2024 CellPhoneSys</span>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">privacy</a></li>
-                <li class="list-inline-item"><a href="#">terms</a></li>
-                <li class="list-inline-item"><a href="#">support</a></li>
-            </ul>
+        <div class="col-md-3 text-end">
+            <a th:if="${session.loggedUser == null}" th:href="@{login}" class="btn btn-outline-primary me-2">Log in</a>
+            <a th:if="${session.loggedUser == null}" th:href="@{register-new-subscriber}" class="btn btn-warning" style="margin-right: 2em;">Registration</a>
+            <button th:if="${session.loggedUser != null}" class="btn btn-warning" onclick="logout()" style="margin-right: 2em;">Log out</button>
         </div>
-    </footer>
+    </header>
+</div>
+
+<footer class="text-dark bg-light mt-auto fixed-bottom border-top" th:fragment="footer">
+    <div class="container my-1 text-center">
+        <span class="text-muted mb-1">© 2023-2024 CellPhoneSys</span>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">privacy</a></li>
+            <li class="list-inline-item"><a href="#">terms</a></li>
+            <li class="list-inline-item"><a href="#">support</a></li>
+        </ul>
+    </div>
+</footer>
+
 </body>
 </html>

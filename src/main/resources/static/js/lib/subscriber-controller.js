@@ -1,3 +1,5 @@
+const DATE_FORMAT = 'MMMM Do YYYY, h:mm:ss a';
+
 function registerNewSubscriber() {
     cleanUpFormHelpMessages();
 
@@ -153,7 +155,7 @@ function loadExpensesHistory() {
             success: function (data) {
                 var container = document.getElementById("container-for-expenses");
                 data.forEach(obj => {
-                    container.insertAdjacentHTML("beforeend", '<tr><th class="col-md-6">' + obj.chargedAt +
+                    container.insertAdjacentHTML("beforeend", '<tr><th class="col-md-6">' + moment(obj.chargedAt).format(DATE_FORMAT) +
                         '</th><th class="col-md-4">' + obj.tariffUuid.substring(0,8) + '</th><th class="col-md-2">' + obj.expenses + '</th></tr>');
                 });
             }
@@ -277,11 +279,11 @@ function selectChat(phoneNumber) {
                     data.forEach(obj => {
                         if (obj.phoneNumber == phoneNumber && obj.sender == true || obj.phoneNumber != phoneNumber && obj.sender == false) {
                             messageContainer.insertAdjacentHTML("afterbegin", '<tr><td class="col-md-1 text-center">></td><td class="col-md-5">' +
-                                '<small class="fw-lighter">' + obj.sentAt + '</small><br>' + obj.message.replace(/\n/g, "<br />") +
+                                '<small class="fw-lighter">' + moment(obj.sentAt).format(DATE_FORMAT) + '</small><br>' + obj.message.replace(/\n/g, "<br />") +
                                 '</td><td class="col-md-5" style="color: #FFFFFF"></td><td class="col-md-1" style="color: #FFFFFF"></td></tr>');
                         } else {
                             messageContainer.insertAdjacentHTML("afterbegin", '<tr style="background-color: #F2F2F2"><td class="col-md-1"></td><td class="col-md-5"></td><td class="col-md-5">' +
-                                '<small class="fw-lighter">' + obj.sentAt + '</small><br>' + obj.message.replace(/\n/g, "<br />") +
+                                '<small class="fw-lighter">' + moment(obj.sentAt).format(DATE_FORMAT) + '</small><br>' + obj.message.replace(/\n/g, "<br />") +
                                 '</td><td class="text-center col-md-1"><</td></tr>');
                         }
                     });
@@ -340,6 +342,13 @@ function goToHomePage() {
 
 function reloadCurrentPage() {
     location.reload();
+}
+
+function fixDatesFormat() {
+    var tariffIssuedAtTag = document.getElementById("tariffIssuedAt");
+    tariffIssuedAtTag.innerHTML = moment(tariffIssuedAtTag.innerHTML).format(DATE_FORMAT);
+    var tariffExpiresAtTag = document.getElementById("tariffExpiresAt");
+    tariffExpiresAtTag.innerHTML = moment(tariffExpiresAtTag.innerHTML).format(DATE_FORMAT);
 }
 
 function cleanUpFormHelpMessages() {
