@@ -12,6 +12,11 @@ public class TariffController {
         return "tariff-catalog";
     }
 
+    @GetMapping("/tv-tariff-catalog")
+    public String showTvTariffCatalogPage() {
+        return "tv-tariff-catalog";
+    }
+
     @GetMapping("/create-new-tariff")
     public String showCreateNewTariffPage() {
         return "create-new-tariff";

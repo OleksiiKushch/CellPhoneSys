@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TV tariff catalog</title>
+
+    <th:block th:include="fragments/general.html :: headerfiles"></th:block>
+
+    <script type="text/javascript" th:src="@{/js/lib/load-tariff-catalog.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/general.html :: header"></div>
+
+
+<div th:replace="fragments/general.html :: footer"></div>
+
+</body>
+</html>

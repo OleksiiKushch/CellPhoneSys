@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "a7a4dbca-26e7-41fd-88f6-c4ae4e751d58",
+		"name": "Cell Phone Company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15897751"
+	},
+	"item": [
+		{
+			"name": "Tariff",
+			"item": [
+				{
+					"name": "Incorrect",
+					"item": [
+						{
+							"name": "Create Expired Tariff",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tariffUuid\": \"7871052f-f9ff-45df-a70b-26db37951247\",\n\"createdAt\": \"2023-05-20\",\n\"overAt\": \"2023-05-20\",\n\"forceOverAt\": null,\n\"name\": \"The Expiring Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 9.99,\n\"tariffMessages\": 3500\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/tariff"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Dead Tariff",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": null,\n\"forceOverAt\": null,\n\"name\": \"The Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 9.99,\n\"tariffMessages\": 3500\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9000/tariff"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Tariff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": null,\n\"forceOverAt\": null,\n\"name\": \"The Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 9.99,\n\"tariffMessages\": 3500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tariff Expiring Tariff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": \"2023-06-20\",\n\"forceOverAt\": null,\n\"name\": \"The Super Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 10.99,\n\"tariffMessages\": 5500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tariff Expiring Tariff (Archive)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": \"2023-06-20\",\n\"forceOverAt\": \"2023-06-20\",\n\"name\": \"The Super Tariff (Archive)\",\n\"description\": \"The tariff.\",\n\"price\": 10.99,\n\"tariffMessages\": 5500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff"
+					},
+					"response": []
+				},
+				{
+					"name": "ForceOverAtAndOverAtAreInconsistent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": null,\n\"forceOverAt\": \"2023-06-20\",\n\"name\": \"The Super Tariff (Archive)\",\n\"description\": \"The tariff.\",\n\"price\": 10.99,\n\"tariffMessages\": 5500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff"
+					},
+					"response": []
+				},
+				{
+					"name": "ForceOverAtAndOverAtAreInconsistent (v2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": \"2023-06-20\",\n\"forceOverAt\": \"2023-06-01\",\n\"name\": \"The Super Tariff (Archive)\",\n\"description\": \"The tariff.\",\n\"price\": 10.99,\n\"tariffMessages\": 5500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriber",
+			"item": [
+				{
+					"name": "Create User (with working tariff)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051705\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-f3d85315bf69\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User (another account)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051111\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-f3d85315bf69\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "TariffNotFound",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051666\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-666666666666\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "PhoneNumberIsAlreadyTaken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051705\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-666666666666\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "PhoneNumberIsAlreadyTaken Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051705\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-666666666666\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Subscriber (exisitng)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"balance\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber/%2B380959051705/payment"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Subscriber (SubscriberNotFound)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"balance\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber/%2B380959051666/payment"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate Subscriber",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"balance\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				},
+				{
+					"name": "InactiveSubscriber",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:9000/subscriber"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Get All Chats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:9000/chat"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Send a message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Hey the one with disabled account\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/message/%2B380959051111"
+					},
+					"response": []
+				},
+				{
+					"name": "See message history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:9000/message/%2B380959051111"
+					},
+					"response": []
+				},
+				{
+					"name": "Send a message (another account)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTExMTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"The other message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/message/%2B380959051705"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expenses",
+			"item": [
+				{
+					"name": "See message history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:9000/expenses"
+					},
+					"response": []
+				},
+				{
+					"name": "Charge Tariff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"tariff\": \"9b84f2d4-9195-4a76-beeb-f3d85315bf69\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/tariff/subscriber"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
