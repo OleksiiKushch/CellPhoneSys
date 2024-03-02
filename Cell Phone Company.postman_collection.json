@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a7a4dbca-26e7-41fd-88f6-c4ae4e751d58",
+		"_postman_id": "5af67343-4787-459c-bce7-283a228ffbb3",
 		"name": "Cell Phone Company",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "15897751"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29650242"
 	},
 	"item": [
 		{
@@ -26,7 +26,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:9000/tariff"
+								"url": {
+									"raw": "http://localhost:9000/tariff",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"tariff"
+									]
+								}
 							},
 							"response": []
 						},
@@ -44,7 +54,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:9000/tariff"
+								"url": {
+									"raw": "http://localhost:9000/tariff",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"tariff"
+									]
+								}
 							},
 							"response": []
 						}
@@ -57,14 +77,24 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": null,\n\"forceOverAt\": null,\n\"name\": \"The Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 9.99,\n\"tariffMessages\": 3500\n}",
+							"raw": "{\n\"createdAt\": \"2023-05-20\",\n\"overAt\": \"2023-06-20\",\n\"forceOverAt\": null,\n\"name\": \"The Tariff\",\n\"description\": \"The tariff.\",\n\"price\": 10.99,\n\"tariffMessages\": 5500\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff"
+						"url": {
+							"raw": "http://localhost:9000/tariff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff"
+							]
+						}
 					},
 					"response": []
 				},
@@ -82,7 +112,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff"
+						"url": {
+							"raw": "http://localhost:9000/tariff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff"
+							]
+						}
 					},
 					"response": []
 				},
@@ -100,7 +140,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff"
+						"url": {
+							"raw": "http://localhost:9000/tariff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff"
+							]
+						}
 					},
 					"response": []
 				},
@@ -118,7 +168,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff"
+						"url": {
+							"raw": "http://localhost:9000/tariff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff"
+							]
+						}
 					},
 					"response": []
 				},
@@ -136,7 +196,25 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff"
+						"url": {
+							"raw": "http://localhost:9000/tariff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New tariff by uuid",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -152,14 +230,24 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051705\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"9b84f2d4-9195-4a76-beeb-f3d85315bf69\"\n}",
+							"raw": "{\n\"name\": \"Mykyta\",\n\"surname\": \"Mykhailenko\",\n\"phoneNumber\": \"+380959051705\",\n\"password\": \"simplepasswordWWW\",\n\"balance\": 56.77,\n\"tariffUuid\": \"c3834af0-9930-464c-a4a8-7714005a1e71\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -177,7 +265,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -195,7 +293,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -213,7 +321,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -231,7 +349,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -249,7 +377,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber/%2B380959051705/payment"
+						"url": {
+							"raw": "http://localhost:9000/subscriber/1231231/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber",
+								"1231231",
+								"payment"
+							]
+						}
 					},
 					"response": []
 				},
@@ -267,7 +407,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber/%2B380959051666/payment"
+						"url": {
+							"raw": "http://localhost:9000/subscriber/%2B380959051666/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber",
+								"%2B380959051666",
+								"payment"
+							]
+						}
 					},
 					"response": []
 				},
@@ -291,7 +443,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				},
@@ -302,11 +464,21 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"value": "Basic KzM4MDkwNTUxMTUxOTk5MToxMjM=",
 								"type": "text"
 							}
 						],
-						"url": "http://localhost:9000/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				}
@@ -326,7 +498,17 @@
 								"type": "text"
 							}
 						],
-						"url": "http://localhost:9000/chat"
+						"url": {
+							"raw": "http://localhost:9000/chat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"chat"
+							]
+						}
 					},
 					"response": []
 				}
@@ -355,7 +537,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/message/%2B380959051111"
+						"url": {
+							"raw": "http://localhost:9000/message/%2B380959051111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"message",
+								"%2B380959051111"
+							]
+						}
 					},
 					"response": []
 				},
@@ -370,7 +563,18 @@
 								"type": "text"
 							}
 						],
-						"url": "http://localhost:9000/message/%2B380959051111"
+						"url": {
+							"raw": "http://localhost:9000/message/%2B380959051111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"message",
+								"%2B380959051111"
+							]
+						}
 					},
 					"response": []
 				},
@@ -394,7 +598,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:9000/message/%2B380959051705"
+						"url": {
+							"raw": "http://localhost:9000/message/%2B380959051705",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"message",
+								"%2B380959051705"
+							]
+						}
 					},
 					"response": []
 				}
@@ -414,7 +629,17 @@
 								"type": "text"
 							}
 						],
-						"url": "http://localhost:9000/expenses"
+						"url": {
+							"raw": "http://localhost:9000/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"expenses"
+							]
+						}
 					},
 					"response": []
 				},
@@ -425,20 +650,31 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic KzM4MDk1OTA1MTcwNTpzaW1wbGVwYXNzd29yZFdXVw==",
+								"value": "Basic KzM4MDkwNTUxMTUxOTk5MToxMjM=",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n    \"tariff\": \"9b84f2d4-9195-4a76-beeb-f3d85315bf69\"\n}",
+							"raw": "{\n\n    \"tariff\": \"493350fb-7328-447a-9fc5-4f79f558a953\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:9000/tariff/subscriber"
+						"url": {
+							"raw": "http://localhost:9000/tariff/subscriber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tariff",
+								"subscriber"
+							]
+						}
 					},
 					"response": []
 				}
